@@ -42,5 +42,11 @@ namespace split.Console.Interfaces
         /// <returns><c>true</c>, if Player is out of cards, <c>false</c> otherwise.</returns>
         bool OutOfCards();
 
+        /// <summary>
+        /// Provides the balance based on the GUID of the Player. 
+        /// </summary>
+        /// <returns>The money balance. </returns>
+        decimal MyBalance();
+
     }
 }
