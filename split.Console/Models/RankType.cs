@@ -1,8 +1,8 @@
 ﻿namespace split.Console.Models
 {
     public enum RankType
-	{
-		Ace,
+    {
+        Ace,
         Two,
         Three,
         Four,
@@ -15,5 +15,5 @@
         Jack,
         Queen,
         King
-	}
+    }
 }

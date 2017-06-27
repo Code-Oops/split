@@ -23,7 +23,6 @@ namespace split.Console.Models
                     }
                 }
             }
-            Shuffle();
         }
 
         /// <summary>
