@@ -19,16 +19,15 @@ namespace split.Console.Models
             Type = type;
             Players = new List<Player>();
             State = GameState.Lobby;
-
         }
 
-		/// <summary> 
+        /// <summary> 
         /// Add a player to the game lobby 
         /// </summary>
-		/// <param name="player"> 
+        /// <param name="player"> 
         /// Player to be added to the game 
         /// </param>
-		/// <returns> 
+        /// <returns> 
         /// 4 character random room code 
         /// </returns>
         public bool AddPlayer(Player player)
@@ -46,18 +45,18 @@ namespace split.Console.Models
         }
 
 
-		/// <summary> 
+        /// <summary> 
         /// Generates a random 4 alpha-numeric character code to join game with 
         /// </summary>
         /// <returns> 
         /// 4 character random room code 
         /// </returns>
-		static string GenerateRoomCode()
+        static string GenerateRoomCode()
         {
-			Random random = new Random();
+            Random random = new Random();
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-			return new string(Enumerable.Repeat(chars, 4)
-		        .Select(s => s[random.Next(s.Length)]).ToArray());
+            return new string(Enumerable.Repeat(chars, 4)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }
 }

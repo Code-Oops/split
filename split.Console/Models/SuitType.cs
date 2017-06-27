@@ -1,5 +1,4 @@
-﻿using System;
-namespace split.Console.Models
+﻿namespace split.Console.Models
 {
     public enum SuitType
     {   
