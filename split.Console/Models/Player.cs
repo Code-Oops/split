@@ -15,7 +15,7 @@ namespace split.Console.Models
             Id = new Guid(name);
             GameCode = code;
             DisplayName = name;
-           
+
             // TODO Create GameSettings where this value would be specified and can be changed in start menu
             Balance = 1000;
 

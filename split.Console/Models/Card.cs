@@ -18,8 +18,8 @@ namespace split.Console.Models
         }
 
         public RankType GetRank()
-		{
-			return Rank;
-		}
+        {
+            return Rank;
+        }
     }
 }
