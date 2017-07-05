@@ -49,5 +49,16 @@ namespace split.Console.Models
         {
             return Cards[CardsIndex--];
         }
+        /// <summary>
+        /// Gets the size of the Deck
+        /// </summary>
+        /// <returns>The size.</returns>
+
+        public int GetSize()
+        {
+            return Cards.Length;
+        }
+
+
     }
 }
