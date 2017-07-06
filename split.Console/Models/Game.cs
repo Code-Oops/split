@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using split.Console.Models;
 
 namespace split.Console.Models
 {
-    public class Game
+    public class Game : ICreateGame
     {
         public Guid Id;
         public string Code;
@@ -14,6 +15,9 @@ namespace split.Console.Models
 
         public Game(GameType type)
         {
+            GameCreator creator = new GameCreator();
+            creator.CreateGame(type);
+
             Code = GenerateRoomCode();
             Id = new Guid(Code);
             Type = type;

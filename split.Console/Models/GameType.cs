@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace split.Console.Models
 {
     public enum GameType
