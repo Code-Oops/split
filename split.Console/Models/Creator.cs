@@ -3,6 +3,6 @@ namespace split.Console.Models
 {
     abstract class Creator
     {
-        public abstract ICreateGame CreateGame(GameType type);
+        public abstract IGame CreateGame(GameType type);
     }
 }

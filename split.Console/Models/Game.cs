@@ -1,11 +1,11 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using split.Console.Models;
 
 namespace split.Console.Models
 {
-    public class Game : ICreateGame
+    public class Game : IGame
     {
         public Guid Id;
         public string Code;
