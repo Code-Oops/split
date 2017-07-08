@@ -17,10 +17,15 @@ namespace split.Console.Models
             {
                 foreach (SuitType suit in Enum.GetValues(typeof(SuitType)))
                 {
-                    foreach (RankType rank in Enum.GetValues(typeof(RankType)))
-                    {
-                        Cards[CardsIndex++] = new Card(suit, rank);
-                    }
+					foreach (RankType rank in Enum.GetValues(typeof(RankType)))
+					{
+                        if (!rank.Equals(RankType.None))
+                        {
+                            Cards[CardsIndex++] = new Card(suit, rank);
+                        }
+						
+					}
+
                 }
             }
         }

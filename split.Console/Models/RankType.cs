@@ -2,6 +2,7 @@
 {
     public enum RankType
     {
+        None,
         Ace,
         Two,
         Three,
