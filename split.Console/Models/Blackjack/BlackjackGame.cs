@@ -7,7 +7,9 @@ namespace split.Console.Models.Blackjack
     public class BlackjackGame : IGame
     {
         protected internal Deck _deck;
-        private int numDecks = 1; 
+        private int numDecks = 1;
+        private int _pot; 
+
         /// <summary>
         /// Initializes a new instance of the <see cref="T:split.Console.Models.Blackjack.BlackjackGame"/> class.
         /// </summary>
@@ -15,6 +17,7 @@ namespace split.Console.Models.Blackjack
         {
             _deck = new Deck(numDecks); // todo: the number of decks should probably come from somewhere like GameSetting
             _deck.Shuffle();
+            _pot = 0; 
         }
 
         /// <summary>
@@ -25,6 +28,30 @@ namespace split.Console.Models.Blackjack
         {
             return _deck.DealCard();
         }
+        /// <summary>
+        /// Gets the pot.
+        /// </summary>
+        /// <returns>The pot.</returns>
+        public int GetThePot()
+        {
+            return _pot;
+        }
+        /// <summary>
+        /// Adds to the pot.
+        /// </summary>
+        /// <param name="sum">Sum.</param>
+        public void AddToThePot(int sum)
+        {
+            _pot = _pot + sum;
+        }
+        /// <summary>
+        /// Resets the pot.
+        /// </summary>
+        public void ResetThePot()
+        {
+            _pot = 0;
+        }
+
         /// <summary>
         /// Determines if the Player has gotten Twenty One points. 
         /// </summary>
@@ -62,7 +89,12 @@ namespace split.Console.Models.Blackjack
 			}
             return false;
         }
-
+        /// <summary>
+        /// Checks if the sum is 21.
+        /// </summary>
+        /// <returns>TwentyOne if the sum is 21. Under if it is less than 21. Otherwise, 
+        /// Over. </returns>
+        /// <param name="sum">The sum.</param>
         private VictoryType CheckTheSum(int sum)
         {
             if (sum > 21)

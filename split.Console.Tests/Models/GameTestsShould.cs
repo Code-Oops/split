@@ -9,6 +9,13 @@ namespace split.Console.Tests.Models
 {
     public class GameTestsShould
     {
+        private GameCreator _creator;
+
+        public GameTestsShould()
+        {
+            _creator = new GameCreator();
+        }
+
         [Fact]
         public void CreateBlackjackGameObject()
         {
@@ -33,5 +40,40 @@ namespace split.Console.Tests.Models
             Assert.NotNull(exception);
             Assert.IsType<Exception>(exception); 
         }
+
+        [Fact]
+        public void HaveEmptyPot()
+        {
+            IGame bj = _creator.CreateGame(GameType.Blackjack);
+            Assert.Equal(0, bj.GetThePot());
+        }
+
+		[Fact]
+		public void HaveAddedToTheEmptyPot()
+		{
+			IGame bj = _creator.CreateGame(GameType.Blackjack);
+            bj.AddToThePot(100);
+			Assert.Equal(100, bj.GetThePot());
+		}
+
+		[Fact]
+		public void HaveAddedToTheFullPot()
+		{
+			IGame bj = _creator.CreateGame(GameType.Blackjack);
+			bj.AddToThePot(100);
+            bj.AddToThePot(1000);
+			Assert.Equal(1100, bj.GetThePot());
+		}
+
+		[Fact]
+		public void HaveResetThePot()
+		{
+			IGame bj = _creator.CreateGame(GameType.Blackjack);
+			bj.AddToThePot(100);
+            int pot = bj.GetThePot();
+            bj.ResetThePot();
+            Assert.Equal(100, pot);
+			Assert.Equal(0, bj.GetThePot());
+		}
     }
 }

@@ -90,5 +90,25 @@ namespace split.Console.Models
         {
             throw new NotImplementedException();
         }
+
+        public int GetThePot()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddToThePot(int sum)
+        {
+            throw new NotImplementedException();
+        }
+
+        public VictoryType HaveIWon(Card[] hand)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ResetThePot()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
