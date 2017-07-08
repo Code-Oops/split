@@ -8,7 +8,6 @@ namespace split.Console.Models.Blackjack
     {
         protected internal Deck _deck;
         private int numDecks = 1;
-        private int _pot; 
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:split.Console.Models.Blackjack.BlackjackGame"/> class.
@@ -16,8 +15,7 @@ namespace split.Console.Models.Blackjack
         public BlackjackGame()
         {
             _deck = new Deck(numDecks); // todo: the number of decks should probably come from somewhere like GameSetting
-            _deck.Shuffle();
-            _pot = 0; 
+            _deck.Shuffle(); 
         }
 
         /// <summary>
@@ -28,29 +26,7 @@ namespace split.Console.Models.Blackjack
         {
             return _deck.DealCard();
         }
-        /// <summary>
-        /// Gets the pot.
-        /// </summary>
-        /// <returns>The pot.</returns>
-        public int GetThePot()
-        {
-            return _pot;
-        }
-        /// <summary>
-        /// Adds to the pot.
-        /// </summary>
-        /// <param name="sum">Sum.</param>
-        public void AddToThePot(int sum)
-        {
-            _pot = _pot + sum;
-        }
-        /// <summary>
-        /// Resets the pot.
-        /// </summary>
-        public void ResetThePot()
-        {
-            _pot = 0;
-        }
+       
 
         /// <summary>
         /// Determines if the Player has gotten Twenty One points. 
@@ -111,7 +87,19 @@ namespace split.Console.Models.Blackjack
             }
         }
 
+        public int GetThePot()
+        {
+            throw new NotImplementedException();
+        }
 
+        public void AddToThePot(int sum)
+        {
+            throw new NotImplementedException();
+        }
 
+        public void ResetThePot()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

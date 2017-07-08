@@ -44,14 +44,14 @@ namespace split.Console.Tests.Models
         [Fact]
         public void HaveEmptyPot()
         {
-            IGame bj = _creator.CreateGame(GameType.Blackjack);
+            IGame bj = _creator.CreateGame(GameType.Poker);
             Assert.Equal(0, bj.GetThePot());
         }
 
 		[Fact]
 		public void HaveAddedToTheEmptyPot()
 		{
-			IGame bj = _creator.CreateGame(GameType.Blackjack);
+			IGame bj = _creator.CreateGame(GameType.Poker);
             bj.AddToThePot(100);
 			Assert.Equal(100, bj.GetThePot());
 		}
@@ -59,7 +59,7 @@ namespace split.Console.Tests.Models
 		[Fact]
 		public void HaveAddedToTheFullPot()
 		{
-			IGame bj = _creator.CreateGame(GameType.Blackjack);
+			IGame bj = _creator.CreateGame(GameType.Poker);
 			bj.AddToThePot(100);
             bj.AddToThePot(1000);
 			Assert.Equal(1100, bj.GetThePot());
@@ -68,7 +68,7 @@ namespace split.Console.Tests.Models
 		[Fact]
 		public void HaveResetThePot()
 		{
-			IGame bj = _creator.CreateGame(GameType.Blackjack);
+            IGame bj = _creator.CreateGame(GameType.Poker);
 			bj.AddToThePot(100);
             int pot = bj.GetThePot();
             bj.ResetThePot();
