@@ -7,6 +7,7 @@ namespace split.Console.Models.Blackjack
     public class BlackjackGame : IGame
     {
         protected internal Deck _deck;
+        private Player _player;
         private int numDecks = 1;
 
         /// <summary>
@@ -35,7 +36,6 @@ namespace split.Console.Models.Blackjack
         /// <param name="hand">Hand</param>
         public VictoryType HaveIWon(Card[] hand)
         {
-
             //todo: include the Ace, which can be either 1 point or 11 points. 
             int sum = 0;
             foreach (var card in hand)
@@ -87,6 +87,11 @@ namespace split.Console.Models.Blackjack
             }
         }
 
+
+       /* Don't really need to implement these, but need them to use the interface. 
+            Maybe these should be moved into a separate class and only used
+            by games that use the Pot. 
+        */
         public int GetThePot()
         {
             throw new NotImplementedException();

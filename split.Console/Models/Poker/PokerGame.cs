@@ -4,8 +4,12 @@ namespace split.Console.Models.Poker
     public class PokerGame : IGame
     {
         private int _pot;
+		protected internal Deck _deck;
+		private int numDecks = 1;
+
         public PokerGame()
         {
+            _deck = new Deck(numDecks);
             _pot = 0;
         }
 
@@ -40,7 +44,7 @@ namespace split.Console.Models.Poker
 
         Card IGame.DealCard()
         {
-            throw new NotImplementedException();
+            return _deck.DealCard();
         }
 
       

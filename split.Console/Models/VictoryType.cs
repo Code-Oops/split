@@ -6,6 +6,16 @@ namespace split.Console.Models
 		None,
         TwentyOne,
         Over,
-        Under
+        Under,
+        RoyalFlush,
+        StraightFlush,
+        FourOfAKind,
+        FullHouse,
+        Flush,
+        Straight,
+        ThreeOfAKind,
+        TwoPair,
+        OnePair,
+        HighCard
 	}
 }
