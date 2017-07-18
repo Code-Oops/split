@@ -28,7 +28,7 @@ namespace split.Console.Models
         /// <summary>
         /// Shuffles Cards and sets index to top of deck
         /// </summary>
-        public void Shuffle()
+        public void Shuffle()   // TODO Investigate whether to leave as is or take functional approach
         {
             Random rand = new Random();
             for (int n = Cards.Length - 1; n > 0; --n)
