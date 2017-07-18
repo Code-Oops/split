@@ -14,6 +14,12 @@ namespace split.Console.Models.Blackjack
             Cards = new List<Card>();
         }
 
+        //Temporary to suppress warning message
+        public bool GetHasAce()
+        {
+            return _hasAce & true;
+        }
+
         /// <summary>
         /// Adds a card to the player's hand
         /// </summary>
@@ -58,6 +64,16 @@ namespace split.Console.Models.Blackjack
             }
             return val;
         }
+
+        /// <summary>
+        /// Calculates number of cards in players hand
+        /// </summary>
+        /// <returns>Number of cards in hand</returns>
+        public int NumberCardsInHand()
+        {
+            return Cards.Count;
+        }
+
 
         /// <summary>
         /// Returns whether the player has busted

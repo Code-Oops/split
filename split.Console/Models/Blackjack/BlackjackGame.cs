@@ -26,7 +26,7 @@ namespace split.Console.Models.Blackjack
         /// Puts the game into an active state
         /// </summary>
         /// <returns>True is game has been started</returns>
-        public bool StartGame()
+        public new bool StartGame()
         {
             CardDeck.Shuffle();
             return base.StartGame();
