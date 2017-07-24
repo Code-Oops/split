@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 
 namespace split.Console.Interfaces
@@ -26,7 +26,7 @@ namespace split.Console.Interfaces
         /// The API for this could be /game/pot. 
         /// </summary>
         /// <returns>Returns the amount that is in the pot. </returns>
-        decimal GetPot();
+        int GetPot();
 
         /// <summary>
         /// Gets the players in the game

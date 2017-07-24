@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 
 namespace split.Console.Interfaces
@@ -7,7 +7,7 @@ namespace split.Console.Interfaces
     /// This interface is a very rough draft. It will eventually be implemented by an 
     /// object that will encapsulate all player-related behavior. 
     /// </summary>
-    public interface IPlayerInterface : ICardInterface
+    public interface IPlayerInterface : IHaveHand
     {
         /// <summary>
         /// This method will allow Player to join the game. The API call in the 
@@ -24,11 +24,6 @@ namespace split.Console.Interfaces
         /// <returns><c>true</c>, if this is Player's turn, <c>false</c> otherwise.</returns>
         bool MyTurn();
 
-        /// <summary>
-        /// This method will contain Cards that Player has. 
-        /// </summary>
-        /// <returns>A list of objects that implement ICardInterface </returns>
-        List<ICardInterface> MyHand();
 
         /// <summary>
         /// Plays the card.
@@ -46,7 +41,7 @@ namespace split.Console.Interfaces
         /// Provides the balance based on the GUID of the Player. 
         /// </summary>
         /// <returns>The money balance. </returns>
-        decimal MyBalance();
+        int MyBalance();
 
     }
 }
