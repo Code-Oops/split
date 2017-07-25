@@ -12,7 +12,7 @@ namespace split.Console.Models
 
         public Player(string name, string code)
         {
-            Id = new Guid(name);
+            Id = new Guid();
             GameCode = code;
             DisplayName = name;
 
