@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -32,6 +33,9 @@ namespace split.Console
         {
             // Add framework services.
             services.AddMvc();
+
+            // Add mapping service.
+            services.AddAutoMapper(typeof(Startup));
 
             // Register application dependencies.
             services.AddScoped<ISplitRepository, SplitRepository>();
