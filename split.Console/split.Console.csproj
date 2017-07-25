@@ -17,5 +17,6 @@
     <Folder Include="Models\" />
     <Folder Include="Services\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Models\Blackjack\" />
   </ItemGroup>
 </Project>
